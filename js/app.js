@@ -22,9 +22,9 @@ function createTask()
 
    // create span delete task name tags
    const spanDelete = document.createElement('span');
-   spanDelete.classList.add('delete');
-   spanDelete.textContent = "delete";
-
+   spanDelete.classList.add('fa');
+   spanDelete.classList.add('fa-trash');
+  
    // add span to li
    li.appendChild(spanTaskName);
    li.appendChild(spanDelete);
@@ -41,7 +41,7 @@ function createTask()
  */
 function deleteTask(event)
 {
-    if(event.target.className === "delete")
+    if(event.target.className === "fa fa-trash")
     {
         let isDelete = window.confirm('Are you sure you want to delete');
         if(isDelete) 
