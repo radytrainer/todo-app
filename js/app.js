@@ -4,6 +4,11 @@
 function createTask() 
 {
    const task = document.querySelector('#task');
+   // check if task already exists
+  if(taskNameExists(task.value)) 
+  {
+    return confirm('Task name already exists')
+  }
    const priority = document.querySelector('#priority');
    if (task.value === "") 
    {
@@ -68,6 +73,26 @@ function searchTask()
             task.style.display = "flex";
         }
     }
+}
+/**
+ * Task name already exists
+ * @name string
+ */
+function taskNameExists(name)
+{
+    let tasks = document.querySelectorAll('li');
+    console.log(name + "first")
+    for (let task of tasks)
+    {
+        let taskTitle = task.firstElementChild.textContent.toLowerCase();
+        console.log(taskTitle)
+        if (taskTitle === name.toLowerCase()) 
+        {
+            return true;
+        }
+        
+    }
+    return false;
 }
 // Main
 const btnAdd = document.querySelector('button');
