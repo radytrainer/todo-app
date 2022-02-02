@@ -3,7 +3,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-    background: #968d8d;
+    background: hsl(0, 65%, 36%);
 }
 
 .container {
